@@ -35,9 +35,10 @@ if collection.count() == 0:
     print("登録完了！")
 
 # 検索クエリ
-query = "I like coding"
-
+query = input("検索クエリを入力してください: ")
+# クエリをベクトル化
 query_embedding = model.encode([query]).tolist()
+print("クエリのベクトル:", query_embedding)
 
 # 意味検索
 results = collection.query(
